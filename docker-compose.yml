@@ -10,9 +10,3 @@ services:
       POSTGRES_PASSWORD: ovicell_password
     ports:
       - "5432:5432"
-
-  ovepipe:
-    build:
-      context: .
-    depends_on:
-      - db
