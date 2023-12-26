@@ -1,0 +1,18 @@
+# docker-compose.yml
+version: '3'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: ovepipe_db
+      POSTGRES_USER: ovepipe_user
+      POSTGRES_PASSWORD: ovepipe_password
+    ports:
+      - "5432:5432"
+
+  ovepipe:
+    build:
+      context: .
+    depends_on:
+      - db
