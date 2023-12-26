@@ -1,10 +1,29 @@
 # src/app.py
 import argparse
-from database import Database
+from sqlalchemy import create_engine, text
+from sqlalchemy.orm import sessionmaker
 import os
 import json
 import csv
 from datetime import datetime
+
+class Database:
+    def __init__(self):
+        # Set up a PostgreSQL database connection
+        self.engine = create_engine('postgresql://ovepipe_user:ovepipe_password@db:5432/ovepipe_db')
+        self.Session = sessionmaker(bind=self.engine)
+
+    def execute(self, query, params=None):
+        # Execute SQL queries on the database
+        with self.engine.connect() as connection:
+            result = connection.execute(query, params)
+        return result
+
+    def execute_script(self, script_path):
+        # Execute SQL script files
+        with open(script_path, 'r') as script_file:
+            query = text(script_file.read())
+            self.execute(query)
 
 def read_json_file(file_path):
     with open(file_path, 'r') as file:
