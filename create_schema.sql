@@ -1,4 +1,4 @@
--- sql/create_schema.sql
+-- app/create_schema.sql
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(255),
