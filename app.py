@@ -10,7 +10,7 @@ from datetime import datetime
 class Database:
     def __init__(self):
         # Set up a PostgreSQL database connection
-        self.engine = create_engine('postgresql://ovepipe_user:ovepipe_password@db:5432/ovepipe_db')
+        self.engine = create_engine('postgresql://ovicell_user:ovicell_password@db:5432/ovicell_db')
         self.Session = sessionmaker(bind=self.engine)
 
     def execute(self, query, params=None):
@@ -77,7 +77,7 @@ def main():
     db = Database()
 
     # Create database schema
-    db.execute_script('sql/create_schema.sql')
+    db.execute_script('app/create_schema.sql')
 
     # Import user accounts
     data_directory = 'data'
