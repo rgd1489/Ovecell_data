@@ -12,15 +12,14 @@
 
 ## Docker Setup
 
-...bash
+..bash
+
 docker-compose build
 docker-compose up -d
 
 ## Running Data Pipeline
 
-docker-compose run ovepipe python app.py <Game Name> <Date>
-
-## Example as below 
+docker-compose run ovepipe python app.py GameName Date
 
 docker-compose run ovepipe python app.py wwc 2021-04-01
 docker-compose run ovepipe python app.py hb 2021-04-28
