@@ -4,7 +4,6 @@
 
 - data/: Contains game data in JSON and CSV formats.
 - app/: Contains Python source code.
-- tests/: Contains test cases.
 - Dockerfile: Docker configuration for the application.
 - docker-compose.yml: Docker configuration for the PostgreSQL database.
 - requirements.txt: Python dependencies.
