@@ -49,7 +49,7 @@ def import_data(db, data_directory, game, date):
         print(f"Unsupported game: {game}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Ovecell Data Pipeline")
+    parser = argparse.ArgumentParser(description="Ovicell Data Pipeline")
     parser.add_argument("game", choices=["wwc", "hb"], help="Game name ('wwc' or 'hb')")
     parser.add_argument("date", help="Date in the format 'YYYY-MM-DD'")
     args = parser.parse_args()
