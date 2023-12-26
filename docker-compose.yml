@@ -1,4 +1,3 @@
-# docker-compose.yml
 version: '3'
 
 services:
@@ -10,3 +9,12 @@ services:
       POSTGRES_PASSWORD: ovicell_password
     ports:
       - "5432:5432"
+
+  ovicell:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - ./app:/app
