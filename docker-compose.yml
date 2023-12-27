@@ -13,8 +13,8 @@ services:
   ovicell:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Ovecell_data/Dockerfile
     depends_on:
       - db
     volumes:
-     - ./app:/app
+      - ./Ovecell_data/app:/app
